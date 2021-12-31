@@ -13,13 +13,20 @@
             <li>
                 <NavLink href="/" Match="NavLinkMatch.All"><i class="fas fa-fire"></i><span>Dashboard</span></NavLink>
             </li>
-            <li class="menu-header">Configurations</li>
+            <li class="menu-header" >Configurations</li>
             <!-- menu item -->
             <li>
-                <NavLink href="/batch"><i class="fas fa-fire"></i><span>Create Batch</span></NavLink>
-                <NavLink href="/programme"><i class="fas fa-fire"></i><span>Create Programme</span></NavLink>
-                <NavLink href="/course"><i class="fas fa-fire"></i><span>Create Course</span></NavLink>
+                <NavLink href="#" Match="NavLinkMatch.All"@onclick="ToggleConfigurationMenu"><i class="fas fa-fire"></i><span>Configurations</span></NavLink>
             </li>
+            @if (configurationMenu)
+            {
+                <li>
+                    <NavLink href="/create-batch"><i class="fas fa-fire"></i><span>Create Batch</span></NavLink>
+                    <NavLink href="/create-programme"><i class="fas fa-fire"></i><span>Create Programme</span></NavLink>
+                    <NavLink href="/create-course"><i class="fas fa-fire"></i><span>Create Course</span></NavLink>
+                </li>
+            }
+
         </ul>
     </aside>
 </div>
@@ -185,10 +192,16 @@
 </div>*@
 
 @code{
+
     private bool collapseNavMenu = true;
 
+    private bool configurationMenu = false;
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+    private void ToggleConfigurationMenu()
+    {
+        configurationMenu = !configurationMenu;
     }
 }

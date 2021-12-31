@@ -98,9 +98,10 @@ using BookStores.Shared.Partials;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 595 "C:\Users\Mish\source\repos\BookStores\BookStores\Pages\Index.razor"
+#line 596 "C:\Users\Mish\source\repos\BookStores\BookStores\Pages\Index.razor"
       
     private string Title = "Dashboard";
+    private int Total { get; set; } = 10;
 
 #line default
 #line hidden

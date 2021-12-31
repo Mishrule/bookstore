@@ -94,15 +94,13 @@ using BookStores.Shared.Partials;
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "class", "section-header");
             __builder.OpenElement(2, "h1");
-            __builder.AddContent(3, 
 #nullable restore
 #line 2 "C:\Users\Mish\source\repos\BookStores\BookStores\Shared\Partials\SectionTitle.razor"
-         Title
+__builder.AddContent(3, Title);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
         }

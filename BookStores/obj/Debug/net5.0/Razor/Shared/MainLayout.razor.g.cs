@@ -108,15 +108,13 @@ using BookStores.Shared.Partials;
             __builder.OpenElement(12, "div");
             __builder.AddAttribute(13, "class", "content px-4");
             __builder.AddAttribute(14, "b-6oo667yqe3");
-            __builder.AddContent(15, 
 #nullable restore
 #line 14 "C:\Users\Mish\source\repos\BookStores\BookStores\Shared\MainLayout.razor"
-             Body
+__builder.AddContent(15, Body);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

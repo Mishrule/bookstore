@@ -95,7 +95,7 @@ using BookStores.Shared.Partials;
             __builder.OpenElement(0, "section");
             __builder.AddAttribute(1, "class", "section");
             __builder.OpenComponent<BookStores.Shared.Partials.SectionTitle>(2);
-            __builder.AddAttribute(3, "Title", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
+            __builder.AddAttribute(3, "Title", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.String>(
 #nullable restore
 #line 13 "C:\Users\Mish\source\repos\BookStores\BookStores\Pages\Index.razor"
                           Title
@@ -118,15 +118,13 @@ using BookStores.Shared.Partials;
             __builder.AddMarkupContent(14, "<div class=\"card-header\"><h4>Total Admin</h4></div>\r\n                    ");
             __builder.OpenElement(15, "div");
             __builder.AddAttribute(16, "class", "card-body");
-            __builder.AddContent(17, 
 #nullable restore
 #line 25 "C:\Users\Mish\source\repos\BookStores\BookStores\Pages\Index.razor"
-                         Total
+__builder.AddContent(17, Total);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.CloseElement();
             __builder.CloseElement();

@@ -97,13 +97,19 @@ using BookStores.Shared.Partials;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 187 "C:\Users\Mish\source\repos\BookStores\BookStores\Shared\Partials\MainSideBar.razor"
+#line 194 "C:\Users\Mish\source\repos\BookStores\BookStores\Shared\Partials\MainSideBar.razor"
       
+
     private bool collapseNavMenu = true;
 
+    private bool configurationMenu = false;
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+    private void ToggleConfigurationMenu()
+    {
+        configurationMenu = !configurationMenu;
     }
 
 #line default

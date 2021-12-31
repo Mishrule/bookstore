@@ -104,15 +104,13 @@ using BookStores.Shared.Partials;
             __builder.AddMarkupContent(8, "\r\n\r\n        \r\n        ");
             __builder.OpenElement(9, "div");
             __builder.AddAttribute(10, "class", "main-content");
-            __builder.AddContent(11, 
 #nullable restore
 #line 12 "C:\Users\Mish\source\repos\BookStores\BookStores\Shared\_Layout.razor"
-             Body
+__builder.AddContent(11, Body);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(12, "\r\n        ");
             __builder.OpenComponent<BookStores.Shared.Partials.MainFooter>(13);

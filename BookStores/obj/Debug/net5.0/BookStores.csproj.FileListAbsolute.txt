@@ -66,3 +66,9 @@ C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\Razor\Shared\P
 C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\Razor\Shared\Partials\NavHeader.razor.g.cs
 C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\Razor\Shared\Partials\SectionTitle.razor.g.cs
 C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\Razor\Shared\_Layout.razor.g.cs
+C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\RazorDeclaration\Pages\configurations\Batch.razor.g.cs
+C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\RazorDeclaration\Pages\configurations\Course.razor.g.cs
+C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\RazorDeclaration\Pages\configurations\Programme.razor.g.cs
+C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\Razor\Pages\configurations\Batch.razor.g.cs
+C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\Razor\Pages\configurations\Course.razor.g.cs
+C:\Users\Mish\source\repos\BookStores\BookStores\obj\Debug\net5.0\Razor\Pages\configurations\Programme.razor.g.cs
