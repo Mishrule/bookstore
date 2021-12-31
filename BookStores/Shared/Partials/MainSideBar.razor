@@ -1,5 +1,31 @@
 ﻿<div class="main-sidebar">
+    <!-- sidebar wrapper -->
     <aside id="sidebar-wrapper">
+        <!-- sidebar brand -->
+        <div class="sidebar-brand">
+            <a href="index.html">Stisla</a>
+        </div>
+        <!-- sidebar menu -->
+        <ul class="sidebar-menu">
+            <!-- menu header -->
+            <li class="menu-header">Dashboard</li>
+            <!-- menu item -->
+            <li>
+                <NavLink href="/" Match="NavLinkMatch.All"><i class="fas fa-fire"></i><span>Dashboard</span></NavLink>
+            </li>
+            <li class="menu-header">Configurations</li>
+            <!-- menu item -->
+            <li>
+                <NavLink href="/batch"><i class="fas fa-fire"></i><span>Create Batch</span></NavLink>
+                <NavLink href="/programme"><i class="fas fa-fire"></i><span>Create Programme</span></NavLink>
+                <NavLink href="/course"><i class="fas fa-fire"></i><span>Create Course</span></NavLink>
+            </li>
+        </ul>
+    </aside>
+</div>
+
+@*<div class="main-sidebar">
+    <aside id="sidebar-wrapper"  @onclick="ToggleNavMenu">
         <div class="sidebar-brand">
             <a href="index.html">Stisla</a>
         </div>
@@ -9,10 +35,10 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <NavLink href="#" class="nav-link has-dropdown"  data-toggle="dropdown" Match="NavLinkMatch.All"><i class="fas fa-fire"></i><span>Dashboard</span></NavLink>
                 <ul class="dropdown-menu">
-                    <li><NavLink class="nav-link" href="index-0.html">General Dashboard</NavLink></li>
-                    <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
+                    <li><NavLink class="nav-link" href="/">General Dashboard</NavLink></li>
+                    <li><NavLink class="nav-link" href="index.html">Ecommerce Dashboard</NavLink></li>
                 </ul>
             </li>
             <li class="menu-header">Starter</li>
@@ -156,4 +182,13 @@
             </a>
         </div>
     </aside>
-</div>
+</div>*@
+
+@code{
+    private bool collapseNavMenu = true;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

@@ -55,6 +55,18 @@
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />
 
+
+    @*<div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>*@
+
     <!-- General JS Scripts -->
     <script src="~/assets/js/jquery-3.3.1.min.js"></script>
     <script src="~/assets/js/popper.min.js"></script>
@@ -69,5 +81,6 @@
     <script src="~/assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
+    <script src="_framework/blazor.server.js"></script>
 </body>
 </html>

@@ -96,6 +96,19 @@ using BookStores.Shared.Partials;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 187 "C:\Users\Mish\source\repos\BookStores\BookStores\Shared\Partials\MainSideBar.razor"
+      
+    private bool collapseNavMenu = true;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591
