@@ -97,19 +97,61 @@ using BookStores.Shared.Partials;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 194 "C:\Users\Mish\source\repos\BookStores\BookStores\Shared\Partials\MainSideBar.razor"
+#line 90 "C:\Users\Mish\source\repos\BookStores\BookStores\Shared\Partials\MainSideBar.razor"
       
 
-    private bool collapseNavMenu = true;
 
     private bool configurationMenu = false;
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    private bool studentMenu = false;
+    private bool activityMenu = false;
+    private bool reportMenu = false;
+    private bool userAccountMenu = false;
+
+
+
+
     private void ToggleConfigurationMenu()
     {
         configurationMenu = !configurationMenu;
+        studentMenu = false;
+        activityMenu = false;
+        reportMenu = false;
+        userAccountMenu = false;
+    }
+
+    private void ToggleStudentMenu()
+    {
+        studentMenu = !studentMenu;
+        configurationMenu = false;
+        activityMenu = false;
+        reportMenu = false;
+        userAccountMenu = false;
+
+    }
+
+    private void ToggleActivityMenu()
+    {
+        activityMenu = !activityMenu;
+        configurationMenu = false;
+        studentMenu = false;
+        reportMenu = false;
+        userAccountMenu = false;
+    }
+    private void ToggleReportMenu()
+    {
+        reportMenu = !reportMenu;
+        configurationMenu = false;
+        studentMenu = false;
+        activityMenu = false;
+        userAccountMenu = false;
+    }
+
+    private void ToggleUserAccountMenu()
+    {
+        userAccountMenu = !userAccountMenu;
+        configurationMenu = false;
+        studentMenu = false;
+        reportMenu = false;
     }
 
 #line default

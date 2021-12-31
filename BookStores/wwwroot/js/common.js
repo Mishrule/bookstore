@@ -1,0 +1,3 @@
+﻿function scroll() {
+    $("aside").niceScroll();
+}

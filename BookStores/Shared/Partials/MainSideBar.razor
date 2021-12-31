@@ -1,29 +1,86 @@
-﻿<div class="main-sidebar">
-    <!-- sidebar wrapper -->
+﻿@
+<div class="main-sidebar">
+    <!--sidebar wrapper-->
     <aside id="sidebar-wrapper">
-        <!-- sidebar brand -->
+        <!--sidebar brand-->
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="/">Book Panel</a>
         </div>
-        <!-- sidebar menu -->
+        <!--sidebar menu-->
         <ul class="sidebar-menu">
-            <!-- menu header -->
+            <!--menu header-->
             <li class="menu-header">Dashboard</li>
-            <!-- menu item -->
+            <!--menu item-->
             <li>
-                <NavLink href="/" Match="NavLinkMatch.All"><i class="fas fa-fire"></i><span>Dashboard</span></NavLink>
+                <NavLink href="/" Match="NavLinkMatch.All"><i class="fas fa-home"></i><span>Dashboard</span></NavLink>
             </li>
-            <li class="menu-header" >Configurations</li>
-            <!-- menu item -->
-            <li>
-                <NavLink href="#" Match="NavLinkMatch.All"@onclick="ToggleConfigurationMenu"><i class="fas fa-fire"></i><span>Configurations</span></NavLink>
+            <li class="menu-header">Configurations</li>
+            <!--menu item-->
+            <li class="nav-item dropdown">
+                <NavLink href="#" class="has-dropdown" Match="NavLinkMatch.All" @onclick="ToggleConfigurationMenu"><i class="fas fa-cogs"></i><span>Configurations</span></NavLink>
             </li>
             @if (configurationMenu)
             {
                 <li>
-                    <NavLink href="/create-batch"><i class="fas fa-fire"></i><span>Create Batch</span></NavLink>
-                    <NavLink href="/create-programme"><i class="fas fa-fire"></i><span>Create Programme</span></NavLink>
-                    <NavLink href="/create-course"><i class="fas fa-fire"></i><span>Create Course</span></NavLink>
+                    <NavLink class="nav-link" href="/create-batch"><i class="fas fa-compress-arrows-alt"></i><span>Create Batch</span></NavLink>
+                    <NavLink class="nav-link" href="/create-programme"><i class="fas fa-gitkraken"></i><span>Create Programme</span></NavLink>
+                    <NavLink class="nav-link" href="/create-course"><i class="fas fa-gitter"></i><span>Create Course</span></NavLink>
+                </li>
+            }
+
+            <li class="menu-header">Students</li>
+            <!--Students-->
+            <li class="nav-item dropdown">
+                <NavLink href="#" class="has-dropdown" Match="NavLinkMatch.All" @onclick="ToggleStudentMenu"><i class="fas fa-graduation-cap"></i><span>Students</span></NavLink>
+            </li>
+            @if (studentMenu)
+            {
+                <li>
+                    <NavLink class="nav-link" href="/create-batch"><i class="fas fa-id-card-alt"></i><span>Create Student</span></NavLink>
+                    <NavLink class="nav-link" href="/create-programme"><i class="fas fa-person-booth"></i><span>View Student</span></NavLink>
+                    @*<NavLink class="nav-link" href="/create-course"><i class="fas fa-fire"></i><span>Create Course</span></NavLink>*@
+                </li>
+            }
+
+            <li class="menu-header">Activities</li>
+            <!--Students-->
+            <li class="nav-item dropdown">
+                <NavLink href="#" class="has-dropdown" Match="NavLinkMatch.All" @onclick="ToggleActivityMenu"><i class="fas fa-handshake-alt-slash"></i><span>Activity</span></NavLink>
+            </li>
+            @if (activityMenu)
+            {
+                <li>
+                    <NavLink class="nav-link" href="/create-batch"><i class="fas fa-book-open"></i><span>Assign Books</span></NavLink>
+                    <NavLink class="nav-link" href="/create-programme"><i class="fas fa-book-reader"></i><span>Return Books</span></NavLink>
+                    @*<NavLink class="nav-link" href="/create-course"><i class="fas fa-fire"></i><span>Create Course</span></NavLink>*@
+                </li>
+            }
+
+            <li class="menu-header">Reports</li>
+            <!--Students-->
+            <li class="nav-item dropdown">
+                <NavLink href="#" class="has-dropdown" Match="NavLinkMatch.All" @onclick="ToggleReportMenu"><i class="fas fa-project-diagram"></i><span>Report</span></NavLink>
+            </li>
+            @if (reportMenu)
+            {
+                <li>
+                    <NavLink class="nav-link" href="/create-batch"><i class="fas fa-file-export"></i><span>Export Excel</span></NavLink>
+                    <NavLink class="nav-link" href="/create-programme"><i class="fas fa-file-pdf"></i><span>Create PDF</span></NavLink>
+                    <NavLink class="nav-link" href="/create-course"><i class="fas fa-chart-pie"></i><span>Charts</span></NavLink>
+                </li>
+            }
+
+            <li class="menu-header">User Account</li>
+            <!--Students-->
+            <li class="nav-item dropdown">
+                <NavLink href="#" class="has-dropdown" Match="NavLinkMatch.All" @onclick="ToggleUserAccountMenu"><i class="fas fa-chalkboard-teacher"></i><span>User Account</span></NavLink>
+            </li>
+            @if (userAccountMenu)
+            {
+                <li>
+                    <NavLink class="nav-link" href="/create-batch"><i class="fas fa-user-plus"></i><span>Create User</span></NavLink>
+                    <NavLink class="nav-link" href="/create-programme"><i class="fas fa-users-cog"></i><span>Manager Users</span></NavLink>
+                    <NavLink class="nav-link" href="/create-course"><i class="fas fa-users"></i><span>User List</span></NavLink>
                 </li>
             }
 
@@ -31,177 +88,59 @@
     </aside>
 </div>
 
-@*<div class="main-sidebar">
-    <aside id="sidebar-wrapper"  @onclick="ToggleNavMenu">
-        <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
-        </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
-        </div>
-        <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
-            <li class="nav-item dropdown">
-                <NavLink href="#" class="nav-link has-dropdown"  data-toggle="dropdown" Match="NavLinkMatch.All"><i class="fas fa-fire"></i><span>Dashboard</span></NavLink>
-                <ul class="dropdown-menu">
-                    <li><NavLink class="nav-link" href="/">General Dashboard</NavLink></li>
-                    <li><NavLink class="nav-link" href="index.html">Ecommerce Dashboard</NavLink></li>
-                </ul>
-            </li>
-            <li class="menu-header">Starter</li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-                    <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                    <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-                </ul>
-            </li>
-            <li class="active"><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
-                    <li><a class="nav-link" href="bootstrap-badge.html">Badge</a></li>
-                    <li><a class="nav-link" href="bootstrap-breadcrumb.html">Breadcrumb</a></li>
-                    <li><a class="nav-link" href="bootstrap-buttons.html">Buttons</a></li>
-                    <li><a class="nav-link" href="bootstrap-card.html">Card</a></li>
-                    <li><a class="nav-link" href="bootstrap-carousel.html">Carousel</a></li>
-                    <li><a class="nav-link" href="bootstrap-collapse.html">Collapse</a></li>
-                    <li><a class="nav-link" href="bootstrap-dropdown.html">Dropdown</a></li>
-                    <li><a class="nav-link" href="bootstrap-form.html">Form</a></li>
-                    <li><a class="nav-link" href="bootstrap-list-group.html">List Group</a></li>
-                    <li><a class="nav-link" href="bootstrap-media-object.html">Media Object</a></li>
-                    <li><a class="nav-link" href="bootstrap-modal.html">Modal</a></li>
-                    <li><a class="nav-link" href="bootstrap-nav.html">Nav</a></li>
-                    <li><a class="nav-link" href="bootstrap-navbar.html">Navbar</a></li>
-                    <li><a class="nav-link" href="bootstrap-pagination.html">Pagination</a></li>
-                    <li><a class="nav-link" href="bootstrap-popover.html">Popover</a></li>
-                    <li><a class="nav-link" href="bootstrap-progress.html">Progress</a></li>
-                    <li><a class="nav-link" href="bootstrap-table.html">Table</a></li>
-                    <li><a class="nav-link" href="bootstrap-tooltip.html">Tooltip</a></li>
-                    <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
-                </ul>
-            </li>
-            <li class="menu-header">Stisla</li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Components</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="components-article.html">Article</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Avatar</a></li>
-                    <li><a class="nav-link" href="components-chat-box.html">Chat Box</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">Empty State</a></li>
-                    <li><a class="nav-link" href="components-gallery.html">Gallery</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-hero.html">Hero</a></li>
-                    <li><a class="nav-link" href="components-multiple-upload.html">Multiple Upload</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-pricing.html">Pricing</a></li>
-                    <li><a class="nav-link" href="components-statistic.html">Statistic</a></li>
-                    <li><a class="nav-link" href="components-tab.html">Tab</a></li>
-                    <li><a class="nav-link" href="components-table.html">Table</a></li>
-                    <li><a class="nav-link" href="components-user.html">User</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="components-wizard.html">Wizard</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
-                    <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
-                    <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-map-marker-alt"></i> <span>Google Maps</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="gmaps-advanced-route.html">Advanced Route</a></li>
-                    <li><a href="gmaps-draggable-marker.html">Draggable Marker</a></li>
-                    <li><a href="gmaps-geocoding.html">Geocoding</a></li>
-                    <li><a href="gmaps-geolocation.html">Geolocation</a></li>
-                    <li><a href="gmaps-marker.html">Marker</a></li>
-                    <li><a href="gmaps-multiple-marker.html">Multiple Marker</a></li>
-                    <li><a href="gmaps-route.html">Route</a></li>
-                    <li><a href="gmaps-simple.html">Simple</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Modules</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="modules-calendar.html">Calendar</a></li>
-                    <li><a class="nav-link" href="modules-chartjs.html">ChartJS</a></li>
-                    <li><a class="nav-link" href="modules-datatables.html">DataTables</a></li>
-                    <li><a class="nav-link" href="modules-flag.html">Flag</a></li>
-                    <li><a class="nav-link" href="modules-font-awesome.html">Font Awesome</a></li>
-                    <li><a class="nav-link" href="modules-ion-icons.html">Ion Icons</a></li>
-                    <li><a class="nav-link" href="modules-owl-carousel.html">Owl Carousel</a></li>
-                    <li><a class="nav-link" href="modules-sparkline.html">Sparkline</a></li>
-                    <li><a class="nav-link" href="modules-sweet-alert.html">Sweet Alert</a></li>
-                    <li><a class="nav-link" href="modules-toastr.html">Toastr</a></li>
-                    <li><a class="nav-link" href="modules-vector-map.html">Vector Map</a></li>
-                    <li><a class="nav-link" href="modules-weather-icon.html">Weather Icon</a></li>
-                </ul>
-            </li>
-            <li class="menu-header">Pages</li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="auth-forgot-password.html">Forgot Password</a></li>
-                    <li><a href="auth-login.html">Login</a></li>
-                    <li><a class="beep beep-sidebar" href="auth-login-2.html">Login 2</a></li>
-                    <li><a href="auth-register.html">Register</a></li>
-                    <li><a href="auth-reset-password.html">Reset Password</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-exclamation"></i> <span>Errors</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="errors-503.html">503</a></li>
-                    <li><a class="nav-link" href="errors-403.html">403</a></li>
-                    <li><a class="nav-link" href="errors-404.html">404</a></li>
-                    <li><a class="nav-link" href="errors-500.html">500</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-bicycle"></i> <span>Features</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="features-activities.html">Activities</a></li>
-                    <li><a class="nav-link" href="features-post-create.html">Post Create</a></li>
-                    <li><a class="nav-link" href="features-posts.html">Posts</a></li>
-                    <li><a class="nav-link" href="features-profile.html">Profile</a></li>
-                    <li><a class="nav-link" href="features-settings.html">Settings</a></li>
-                    <li><a class="nav-link" href="features-setting-detail.html">Setting Detail</a></li>
-                    <li><a class="nav-link" href="features-tickets.html">Tickets</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i> <span>Utilities</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="utilities-contact.html">Contact</a></li>
-                    <li><a class="nav-link" href="utilities-invoice.html">Invoice</a></li>
-                    <li><a href="utilities-subscribe.html">Subscribe</a></li>
-                </ul>
-            </li>
-            <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
-        </ul>
-
-        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                <i class="fas fa-rocket"></i> Documentation
-            </a>
-        </div>
-    </aside>
-</div>*@
-
 @code{
 
-    private bool collapseNavMenu = true;
 
     private bool configurationMenu = false;
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    private bool studentMenu = false;
+    private bool activityMenu = false;
+    private bool reportMenu = false;
+    private bool userAccountMenu = false;
+
+
+
+
     private void ToggleConfigurationMenu()
     {
         configurationMenu = !configurationMenu;
+        studentMenu = false;
+        activityMenu = false;
+        reportMenu = false;
+        userAccountMenu = false;
+    }
+
+    private void ToggleStudentMenu()
+    {
+        studentMenu = !studentMenu;
+        configurationMenu = false;
+        activityMenu = false;
+        reportMenu = false;
+        userAccountMenu = false;
+
+    }
+
+    private void ToggleActivityMenu()
+    {
+        activityMenu = !activityMenu;
+        configurationMenu = false;
+        studentMenu = false;
+        reportMenu = false;
+        userAccountMenu = false;
+    }
+    private void ToggleReportMenu()
+    {
+        reportMenu = !reportMenu;
+        configurationMenu = false;
+        studentMenu = false;
+        activityMenu = false;
+        userAccountMenu = false;
+    }
+
+    private void ToggleUserAccountMenu()
+    {
+        userAccountMenu = !userAccountMenu;
+        configurationMenu = false;
+        studentMenu = false;
+        reportMenu = false;
     }
 }
